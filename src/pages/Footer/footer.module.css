@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 30px;
+
+    justify-content: space-between;
+    background-color: aqua;
+}
+.box{
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    width: 20px;
+    height: 20px;
+    margin: auto;
+}
+.Home:active{
+    width: 25px;
+    height: 25px;
+    color:brown;
+}
