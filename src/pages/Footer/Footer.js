@@ -1,40 +1,41 @@
 import React from "react";
-import classes from './footer.module.css';
+import './footer.css'
 import { AiOutlineHome,AiOutlineShoppingCart, AiOutlineSearch, AiOutlineMenu } from 'react-icons/ai'
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 export default function Footer({name}){
 
-    let navigate = useNavigate();
 
-    const handleClickH = () => {
-        navigate('/'+name+'/Home');
-    }
-    const handleClickM = () => {
-        navigate('/'+name+'/Menu')
-    }
-    const handleClickS = () => {
-        navigate('/'+name+'/Search')
-
-    }
-    const handleClickC = () => {
-        navigate('/'+name+'/Cart')
-    }
 
     return (
-        <div className={classes.container}>
-            <div className={classes.box} onClick={handleClickH} >
-                <AiOutlineHome className={[classes.Home, classes.icon, classes['d-flex-c']].join(' ')}/>    
-            </div>
-            <div className={classes.box} onClick={handleClickM}>
-                <AiOutlineMenu className={[classes.Menu, classes.icon, classes['d-flex-c']].join(' ')}/>
-            </div>
-            <div className={classes.box} onClick={handleClickS}>
-                <AiOutlineSearch className={[classes.Search, classes.icon, classes['d-flex-c']].join(' ')}/>
-            </div>
-            <div className={classes.box} onClick={handleClickC}>
-                <AiOutlineShoppingCart className={[classes.Cart, classes.icon, classes['d-flex-c']].join(' ')}/>   
-            </div>
-        </div>
+        <nav className="footercontainerthis">
+            <NavLink
+                to={'/'+name}
+                className={({ isActive }) => (isActive ? 'footericonactive' : 'footericon')}
+                end >
+                <AiOutlineHome /> 
+                <div className="text">Home</div>   
+            </NavLink>
+            <NavLink
+                className={({ isActive }) => (isActive ? 'footericonactive' : 'footericon')}
+                to={'/'+name+'/Menu/All'} >
+                <AiOutlineMenu />
+                <div className="text">Menu</div>
+            </NavLink>
+            <NavLink
+                className={({ isActive }) => (isActive ? 'footericonactive' : 'footericon')}
+                to={'/'+name+'/Search'} >
+                <AiOutlineSearch />
+                <div className="text">Search</div>
+            </NavLink>
+            <NavLink
+                className={({ isActive }) => (isActive ? 'footericonactive' : 'footericon')}
+                to={'/'+name+'/Cart'} >
+                <AiOutlineShoppingCart />
+                <div className="text">Cart</div>   
+            </NavLink>
+        </nav>
+
     )
 }
