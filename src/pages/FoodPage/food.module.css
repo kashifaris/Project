@@ -14,9 +14,13 @@
 }
 .goback{
     background-color: white;
-    color: #9098B1 ;
-    padding: 15px;
-    padding-left: 25px;
+    padding: 14px;
+    color: var(--neutral-dark, #223263);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%; /* 18px */
+    letter-spacing: 1.1px;
+    padding-left: 16px;
 }
 .content{
     display: flex;

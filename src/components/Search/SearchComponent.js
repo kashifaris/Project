@@ -4,10 +4,10 @@ import classes from './search.module.css';
 import { FaSearch } from 'react-icons/fa'
 
 
-export default function SearchComponent({name}) {
+export default function SearchComponent() {
   const [term, setTerm] = useState('');
   const navigate = useNavigate();
-  const { searchTerm } = useParams();
+  const { name, searchTerm } = useParams();
 
   useEffect(() => {
     setTerm(searchTerm ?? '');

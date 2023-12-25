@@ -9,6 +9,7 @@ import { getAdds, getAllTags, getBestSellers } from "../../services/MenuService"
 import TagsHome from "../../components/TagsHome/TagsHome";
 import BestSeller from "../../components/BestSeller/BestSeller";
 import Add from "../../components/Add/Add";
+import SearchComponent from "../../components/Search/SearchComponent";
 
 const initialState = {
     TagsAll: [],
@@ -57,6 +58,7 @@ export const Home = () => {
             <div className={classes.content}>
                 <div className={classes.header}>   
                     <Header restaurant={Restaurant[0]}  />
+                    <SearchComponent />
                 </div>
                 <div className={classes.innerContent}>
                     <TagsHome name={name} tags={TagsAll} />

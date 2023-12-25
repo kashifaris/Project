@@ -2,6 +2,9 @@ import { sample_adds, sample_foods, sample_tags } from "../data";
 
 export const getAllMenu = async () => sample_foods ;
 
+export const getByName = async searchTerm => {
+    return sample_foods.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+}
 export const getByTag = async foodid => {
     return sample_foods.find(item => item.id === foodid);
 }

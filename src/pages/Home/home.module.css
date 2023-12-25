@@ -21,7 +21,6 @@
     overflow-y:scroll;
     scroll-behavior: smooth;
 }
-
 .innerContent{
     display: flex;
     flex-direction: column;
